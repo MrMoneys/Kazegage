@@ -11,7 +11,7 @@ local humanoid = character:WaitForChild("Humanoid")
 local player = Players.LocalPlayer
 player.CameraMode = Enum.CameraMode.Classic
 local aimbotEnabled = false
-local aimbotRange = 100 -- Distância máxima em studs
+local aimbotRange = 500 -- Distância máxima em studs
 local smoothness = 0.2 -- Suavização do movimento (0-1, onde 1 é mais suave)
 
 local player = Players.LocalPlayer
@@ -737,35 +737,34 @@ end
 --Lock Npcs
 local function getClosestNPC()
     local closestNPC = nil
-    local closestDistance = math.huge  
+    local closestDistance = math.huge
 
-    for _, object in ipairs(workspace:GetDescendants()) do  
-        if object:IsA("Model") then  
+    for _, object in ipairs(workspace:GetDescendants()) do
+        if object:IsA("Model") then
             local humanoid = object:FindFirstChild("Humanoid") or object:FindFirstChildWhichIsA("Humanoid")
-            local hrp = object:FindFirstChild("HumanoidRootPart") or object.PrimaryPart  
+            local hrp = object:FindFirstChild("HumanoidRootPart") or object.PrimaryPart
+            if humanoid and hrp and humanoid.Health > 0 and object.Name ~= "Horse" then
+                local isPlayer = false
+                for _, pl in ipairs(Players:GetPlayers()) do
+                    if pl.Character == object then
+                        isPlayer = true
+                        break
+                    end
+                end
+                if not isPlayer then
+                    local distance = (hrp.Position - player.Character.HumanoidRootPart.Position).Magnitude
+                    if distance < closestDistance then
+                        closestDistance = distance
+                        closestNPC = object
+                    end
+                end
+            end
+        end
+    end
 
-            if humanoid and hrp and humanoid.Health > 0 and object.Name ~= "Horse" then  
-                local isPlayer = false  
-                for _, pl in ipairs(Players:GetPlayers()) do  
-                    if pl.Character == object then  
-                        isPlayer = true  
-                        break  
-                    end  
-                end  
+    return closestNPC
+end
 
-                if not isPlayer then  
-                    local distance = (hrp.Position - player.Character.HumanoidRootPart.Position).Magnitude  
-                    if distance < closestDistance then  
-                        closestDistance = distance  
-                        closestNPC = object  
-                    end  
-                end  
-            end  
-        end  
-    end  
-
-    return closestNPC  
-end  
 --Aimbot Npc
 -- Função para encontrar o NPC mais próximo
 local function getClosestNPC()
@@ -882,72 +881,48 @@ LockNpcButton.MouseButton1Click:Connect(function()
     LockNpcButton.Text = "NPC LOCK: " .. (npcLock and "ON" or "OFF")
     
     if npcLock then
-        -- Desconectar qualquer conexão anterior
         if toggleLoop then
             toggleLoop:Disconnect()
         end
-        
-        -- Conectar ao RenderStepped
         toggleLoop = RunService.RenderStepped:Connect(function()
-            -- Verificar se o jogador e o character existem
-            if not player or not player.Character then 
-                if toggleLoop then toggleLoop:Disconnect() end
-                return 
-            end
-            
-            local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
-            if not humanoid then return end
-            
             local npc = getClosestNPC()
-            
-            -- Se já está travado em um NPC, verificar se ainda é válido
-            if lastTarget and (not lastTarget.Parent or not lastTarget:FindFirstChildOfClass("Humanoid") or lastTarget:FindFirstChildOfClass("Humanoid").Health <= 0) then
-                lastTarget = nil
-                removePlayerHighlight()
-                camera.CameraSubject = humanoid
-            end
-            
-            -- Se encontrou um NPC válido
-            if npc and npc:FindFirstChildOfClass("Humanoid") then
-                local npcHumanoid = npc:FindFirstChildOfClass("Humanoid")
-                local npcHrp = npc:FindFirstChild("HumanoidRootPart") or npc.PrimaryPart
-                local playerHrp = player.Character:FindFirstChild("HumanoidRootPart")
-                
-                -- Verificar distância e se está vivo
-                if npcHrp and playerHrp and npcHumanoid.Health > 0 then
+            if npc and npc:FindFirstChild("Humanoid") then
+                local npcHumanoid = npc:FindFirstChild("Humanoid")
+                if npcHumanoid.Health > 0 then
                     camera.CameraSubject = npcHumanoid
                     lastTarget = npc
                     addPlayerHighlight()
-                elseif lastTarget == npc then
-                    -- NPC saiu do alcance ou morreu
+                else
+                    StarterGui:SetCore("SendNotification", {
+                        Title = "Killed NPC",
+                        Text = npc.Name,
+                        Duration = 0.4
+                    })
                     lastTarget = nil
                     removePlayerHighlight()
-                    camera.CameraSubject = humanoid
+                    if player.Character and player.Character:FindFirstChild("Humanoid") then
+                        camera.CameraSubject = player.Character:FindFirstChild("Humanoid")
+                    end
                 end
-            elseif lastTarget then
-                -- Nenhum NPC encontrado, mas estava travado
+            else
+                if player.Character and player.Character:FindFirstChild("Humanoid") then
+                    camera.CameraSubject = player.Character:FindFirstChild("Humanoid")
+                end
                 lastTarget = nil
                 removePlayerHighlight()
-                camera.CameraSubject = humanoid
             end
         end)
     else
-        -- Desativar o lock
         if toggleLoop then
             toggleLoop:Disconnect()
             toggleLoop = nil
         end
         removePlayerHighlight()
-        if player.Character then
-            local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
-            if humanoid then
-                camera.CameraSubject = humanoid
-            end
+        if player.Character and player.Character:FindFirstChild("Humanoid") then
+            camera.CameraSubject = player.Character:FindFirstChild("Humanoid")
         end
-        lastTarget = nil
     end
 end)
-
 
 
 -- InicializaÃ§Ã£o
