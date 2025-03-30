@@ -1,9 +1,63 @@
 local Players = game:GetService("Players")
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
+
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 local PathfindingService = game:GetService("PathfindingService")
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
+
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 local camera = workspace.CurrentCamera
 local StarterGui = game:GetService("StarterGui")
@@ -12,7 +66,34 @@ local player = Players.LocalPlayer
 player.CameraMode = Enum.CameraMode.Classic
 local aimbotEnabled = false
 local aimbotRange = 500 -- Distância máxima em studs
-local smoothness = 0.2 -- Suavização do movimento (0-1, onde 1 é mais suave)
+local smoothness = 0.2 
+-- --[[  
+ -- ╔════════════════════════════╗  
+ -- ║   *!* CÓDIGO MÍSTICO *!*   ║  
+ -- ╚════════════════════════════╝  
+
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]   do movimento (0-1, onde 1 é mais suave)
 
 local player = Players.LocalPlayer
 local ESPEnabled = false
@@ -24,7 +105,33 @@ local espConnection = nil
 local espMobsEnabled = false
 local espMobsObjects = {}
 local noclipEnabled = false
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 -- CriaÃ§Ã£o da UI
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
@@ -47,21 +154,73 @@ TabsFrame.Size = UDim2.new(1, 0, 0.1, 0)
 TabsFrame.Position = UDim2.new(0, 0, 0, 0) 
 TabsFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 TabsFrame.Parent = MainFrame
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 -- Criando botões de Abas
 local Tab1Button = Instance.new("TextButton")
 Tab1Button.Size = UDim2.new(0.3, 0, 1, 0)
 Tab1Button.Position = UDim2.new(0, 0, 0, 0)
-Tab1Button.Text = "MAIN🏠"
+Tab1Button.Text = "MAIN"
 Tab1Button.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 Tab1Button.Parent = TabsFrame
 Tab1Button.Font = Enum.Font.SourceSansBold
 Tab1Button.TextSize = 16
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 local Tab2Button = Instance.new("TextButton")
 Tab2Button.Size = UDim2.new(0.4, 0, 1, 0)
 Tab2Button.Position = UDim2.new(0.30, 0, 0, 0)
-Tab2Button.Text = "TELEPORTES🌐"
+Tab2Button.Text = "TELEPORTE"
 Tab2Button.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 Tab2Button.Parent = TabsFrame
 Tab2Button.Font = Enum.Font.SourceSansBold
@@ -70,12 +229,38 @@ Tab2Button.TextSize = 16
 local Tab3Button = Instance.new("TextButton")
 Tab3Button.Size = UDim2.new(0.3, 0, 1, 0)
 Tab3Button.Position = UDim2.new(0.7, 0, 0, 0)
-Tab3Button.Text = "ESP🎯"
+Tab3Button.Text = "ESP"
 Tab3Button.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 Tab3Button.Parent = TabsFrame
 Tab3Button.Font = Enum.Font.SourceSansBold
 Tab3Button.TextSize = 16
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 -- Criando Frames das Abas
 local Tab1Frame = Instance.new("Frame")
 Tab1Frame.Size = UDim2.new(1, 0, 0.9, 0)
@@ -105,29 +290,85 @@ local function switchTab(selectedFrame)
 
     selectedFrame.Visible = true
 end
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 Tab1Button.MouseButton1Click:Connect(function() switchTab(Tab1Frame) end)
 Tab2Button.MouseButton1Click:Connect(function() switchTab(Tab2Frame) end)
 Tab3Button.MouseButton1Click:Connect(function() switchTab(Tab3Frame) end)
 
 --TOGGLE HUB
--- Modifique o ToggleButton existente
-local ToggleButton = Instance.new("ImageButton") -- Mude de TextButton para ImageButton
-ToggleButton.Parent = ScreenGui
-ToggleButton.Size = UDim2.new(0, 40, 0, 40)
-ToggleButton.Position = UDim2.new(0.05, 0, 0.05, 0)
-ToggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-ToggleButton.Image = "rbxassetid://109158608681076" -- Substitua pelo ID da sua imagem
-ToggleButton.ScaleType = Enum.ScaleType.Fit
-ToggleButton.Draggable = true
+local ToggleButton = Instance.new("ImageButton")
+   ToggleButton.Parent = ScreenGui
+   ToggleButton.Size = UDim2.new(0, 40, 0, 40)
+   ToggleButton.Position = UDim2.new(0.05, 0, 0.05, 0)
+   ToggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+   ToggleButton.Image = "rbxassetid://109158608681076" -- Substitua pelo ID da sua imagem
+   ToggleButton.ScaleType = Enum.ScaleType.Fit
+   ToggleButton.Draggable = true
 
+   -- Adicionando bordas arredondadas
+   local UICorner = Instance.new("UICorner")
+   UICorner.Parent = ToggleButton
+   UICorner.CornerRadius = UDim.new(0.3, 0) -- Quanto maior, mais arredondado (0.5 = círculo perfeito)
 
-ToggleButton.MouseButton1Click:Connect(function()
-    uiVisible = not uiVisible
-    MainFrame.Visible = uiVisible
-    print("UI Visível:", uiVisible)
-end)
+   -- Função de toggle (opcional, caso queira ajustar)
+   ToggleButton.MouseButton1Click:Connect(function()
+       uiVisible = not uiVisible
+       MainFrame.Visible = uiVisible
+       print("UI Visível:", uiVisible)
+   end)
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
  
  local MobsESPButton = Instance.new("TextButton")
 MobsESPButton.Parent = Tab3Frame
@@ -138,7 +379,33 @@ MobsESPButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 MobsESPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 MobsESPButton.Font = Enum.Font.Fantasy
 MobsESPButton.TextSize = 16
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 local LockNpcButton = Instance.new("TextButton")
 LockNpcButton.Size = UDim2.new(0.8, 0, 0.15, 0)
 LockNpcButton.Position = UDim2.new(0.1, 0, 0.4, 0)
@@ -158,26 +425,43 @@ AimbotButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 AimbotButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 AimbotButton.Font = Enum.Font.Fantasy
 AimbotButton.TextSize = 16
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 local TpTrainButton = Instance.new("TextButton")
 TpTrainButton.Parent = Tab2Frame
 TpTrainButton.Size = UDim2.new(0.8, 0, 0.15, 0)
 TpTrainButton.Position = UDim2.new(0.1, 0, 0.4, 0)
-TpTrainButton.Text = "TP PARA O TREM"
+TpTrainButton.Text = "TP PARA O TREM(beta)"
 TpTrainButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 TpTrainButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TpTrainButton.Font = Enum.Font.Fantasy
 TpTrainButton.TextSize = 16
 
-local ladderButton = Instance.new("TextButton")
-ladderButton.Parent = Tab2Frame
-ladderButton.Size = UDim2.new(0.8, 0, 0.15, 0)
-ladderButton.Position = UDim2.new(0.1, 0, 0.6, 0)
-ladderButton.Text = "TP PARA  ESCADA (TREM)"
-ladderButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-ladderButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-ladderButton.Font = Enum.Font.Fantasy
-ladderButton.TextSize = 16
 
 local noClipButton = Instance.new("TextButton")
 noClipButton.Parent = Tab1Frame
@@ -188,7 +472,33 @@ noClipButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 noClipButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 noClipButton.Font = Enum.Font.Fantasy
 noClipButton.TextSize = 16
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 local Title = Instance.new("TextLabel")
 Title.Parent = MainFrame
 Title.Size = UDim2.new(1, 0, 0.15, 0)
@@ -198,7 +508,33 @@ Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BackgroundTransparency = 1
 Title.Font = Enum.Font.SourceSansBold
 Title.TextSize = 20
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 
 
 local ESPToggle = Instance.new("TextButton")
@@ -210,7 +546,33 @@ ESPToggle.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 ESPToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 ESPToggle.Font = Enum.Font.Fantasy
 ESPToggle.TextSize = 16
+--[[  
+  ╔════════════════════════════╗  
+  ║   *!* CÓDIGO MÍSTICO *!*   ║  
+  ╚════════════════════════════╝  
 
+  --[[ ~~~ ]]--
+  -- ¤ª¶§∞¢£™©®†‡¥√∫~≈ç√∫~Ω  
+  -- R@nD0m: 8Jk#mN7$pQ3vX*  
+
+  --[[  
+    █▀▀ █▀█ █▀▄▀█ █▀█  
+    █▄▄ █▄█ █░▀░█ █▄█  
+  ]]  
+
+  -- !!@#%%^^&&**(())__++  
+  --[[  
+    [̲̅A][̲̅B][̲̅C][̲̅D][̲̅E][̲̅F][̲̅G]  
+    [̲̅1][̲̅2][̲̅3][̲̅4][̲̅5]  
+  ]]  
+
+  -- 7H3 3ND 1S N34R...  
+  --[[  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+    ✦   F1N4L  C0D3   ✦  
+    ✦・┈┈┈┈┈┈・✦・┈┈┈┈┈┈・✦  
+  ]]  
+--]]  
 local AutoTeleportToggle = Instance.new("TextButton")
 AutoTeleportToggle.Parent = Tab2Frame
 AutoTeleportToggle.Size = UDim2.new(0.8, 0, 0.15, 0)
@@ -227,7 +589,7 @@ local CreditsLabel = Instance.new("TextLabel")
 CreditsLabel.Parent = MainFrame
 CreditsLabel.Size = UDim2.new(0.8, 0, 0.1, 0)
 CreditsLabel.Position = UDim2.new(0.1, 0, 0.9, 0)
-CreditsLabel.Text = "👑SCRIPT BY MRMONEYS👑"
+CreditsLabel.Text = "SCRIPT BY MRMONEYS"
 CreditsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 CreditsLabel.BackgroundTransparency = 1
 CreditsLabel.Font = Enum.Font.Fantasy
@@ -529,23 +891,29 @@ end
 -- Função para atualizar o ESP dinamicamente
 local function UpdateESPMobs()
     if not espMobsEnabled then
-        -- Remover ESPs se desativado
+        -- Limpa ESPs existentes
         for mob, _ in pairs(espMobsObjects) do
-            if mob:FindFirstChild("ESP_Box") then
-                mob.ESP_Box:Destroy()
-            end
-            if mob:FindFirstChild("ESP_Tag") then
-                mob.ESP_Tag:Destroy()
-            end
+            if mob:FindFirstChild("ESP_Box") then mob.ESP_Box:Destroy() end
+            if mob:FindFirstChild("ESP_Tag") then mob.ESP_Tag:Destroy() end
         end
         espMobsObjects = {}
         return
     end
     
- --   Adicionar ESP para novos mobs
+    -- Atualiza ESP apenas para NPCs (não-Players)
     for _, obj in ipairs(workspace:GetDescendants()) do
         if obj:IsA("Model") and obj:FindFirstChild("Humanoid") then
-            CreateMobESP(obj)
+            local isPlayer = false
+            for _, plr in ipairs(Players:GetPlayers()) do
+                if plr.Character == obj then
+                    isPlayer = true
+                    break
+                end
+            end
+            
+            if not isPlayer and not espMobsObjects[obj] then
+                CreateMobESP(obj)
+            end
         end
     end
 end
@@ -590,23 +958,25 @@ end)
 
 --Movimento do Tp
 local function setPrimaryPart(model)
-    if model.PrimaryPart == nil then
-        for _, part in ipairs(model:GetChildren()) do
+    if model and model:IsA("Model") and not model.PrimaryPart then
+        for _, part in ipairs(model:GetDescendants()) do
             if part:IsA("BasePart") then
                 model.PrimaryPart = part
-                return
+                break
             end
         end
     end
+    return model.PrimaryPart
 end
---Ladder function
+
+--Tp para o Train
 local function findLadder()
     local train = game.Workspace:FindFirstChild("Train")
     if train then
-        local platform = train:FindFirstChild("Platform")
+        local platform = train:FindFirstChild("TrainControls")
         if platform then
             for _, obj in ipairs(platform:GetChildren()) do
-                if obj:IsA("Model") and obj.Name == "Ladder" then
+                if obj:IsA("Model") and obj.Name == "ConductorSeat" then
                     setPrimaryPart(obj)
                     return obj
                 end
@@ -617,83 +987,76 @@ local function findLadder()
 end
 
 local function faceLadder(ladder)
-    if ladder and ladder.PrimaryPart then
+    local character = player.Character
+    if not character then return end
+
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if ladder and ladder.PrimaryPart and humanoidRootPart then
         local ladderPos = ladder.PrimaryPart.Position
         local lookVector = (ladderPos - humanoidRootPart.Position).unit
         humanoidRootPart.CFrame = CFrame.new(humanoidRootPart.Position, humanoidRootPart.Position + lookVector)
     end
 end
 
---Tp para o Train
 local function walkToDestination(destination, finalAdjustment)
-    if destination and destination.PrimaryPart then
-        local destinationPos = destination.PrimaryPart.Position
-        local stopDistance = 1
+    local character = player.Character
+    if not character then return end
 
-        -- Define um tempo limite para evitar travamento
-        local timeLimit = 10
-        local startTime = tick()
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
 
-        humanoid:MoveTo(destinationPos)
+    if not humanoid or not humanoidRootPart or not destination or not destination.PrimaryPart then
+        warn("Erro: Componentes não encontrados!")
+        return
+    end
 
-        local reached = false
-        local connection
-        connection = humanoid.MoveToFinished:Connect(function(success)
-            if success then
-                reached = true
-            end
-        end)
+    local destinationPos = destination.PrimaryPart.Position
+    local stopDistance = 12  -- Se a distância for menor ou igual a 12, teleporta diretamente
 
-        -- Espera até que o jogador chegue ou o tempo limite acabe
-        while not reached and tick() - startTime < timeLimit do
-            task.wait(0.1)
+    local distance = (humanoidRootPart.Position - destinationPos).Magnitude
+
+    -- **Se já estiver perto o suficiente, teleporta direto**
+    if distance <= stopDistance then
+        humanoidRootPart.CFrame = destination.PrimaryPart.CFrame * CFrame.new(0, 0, -1.5)
+        humanoid.Sit = true
+        return
+    end
+
+    -- **Caso contrário, move até o destino**
+    local timeLimit = 10
+    local startTime = tick()
+
+    humanoid:MoveTo(destinationPos)
+    local reached = false
+
+    local connection
+    connection = humanoid.MoveToFinished:Connect(function(success)
+        if success then
+            reached = true
         end
+    end)
 
-        connection:Disconnect()
-        humanoid:Move(Vector3.new(0, 0, 0), true)
+    -- **Espera até que o jogador chegue ou o tempo limite acabe**
+    while not reached and tick() - startTime < timeLimit do
+        task.wait(0.1)
 
-        if finalAdjustment then
-            faceLadder(destination)
+        -- **Verifica a distância durante a caminhada**
+        if (humanoidRootPart.Position - destinationPos).Magnitude <= stopDistance then
+            humanoidRootPart.CFrame = destination.PrimaryPart.CFrame * CFrame.new(0, 0, -1.5)
+            humanoid.Sit = true
+            reached = true
+            break
         end
-    else
-        warn("Destino não encontrado!")
+    end
+
+    connection:Disconnect()
+    humanoid:Move(Vector3.new(0, 0, 0), true)
+
+    if finalAdjustment then
+        faceLadder(destination)
     end
 end
---Ladder Tp
-local function climbLadder()
-    local ladder = findLadder()
-    if ladder then
-        setPrimaryPart(ladder) -- Garante que a escada tem um PrimaryPart
-        walkToDestination(ladder, true)
 
-        -- Força o personagem a ficar de frente para a escada
-        humanoidRootPart.CFrame = CFrame.new(
-            humanoidRootPart.Position,
-            ladder.PrimaryPart.Position
-        )
-
-        -- Simula a subida (alternativa mais confiável)
-        local climbHeight = 10 -- Ajuste conforme necessário
-        local climbSpeed = 1 -- Ajuste conforme necessário
-
-        for i = 1, climbHeight do
-            humanoidRootPart.CFrame = humanoidRootPart.CFrame + Vector3.new(0, climbSpeed, 0)
-            task.wait(0.1)
-        end
-    else
-        warn("Ladder não encontrada!")
-    end
-end
-
-local function goToTrain()
-    local train = game.Workspace:FindFirstChild("Train")
-    if train then
-        setPrimaryPart(train) -- Define o PrimaryPart se não existir
-        walkToDestination(train, false)
-    else
-        warn("Train não encontrado!")
-    end
-end
 -- NoClip (atravessar paredes)
 
 local function toggleNoClip()
@@ -734,65 +1097,53 @@ local function removePlayerHighlight()
         player.Character.PlayerHighlightESP:Destroy()
     end
 end
---Lock Npcs
-local function getClosestNPC()
+--???
+local function isPlayerModel(model)
+    for _, plr in ipairs(Players:GetPlayers()) do
+        if plr.Character == model then
+            return true
+        end
+    end
+    return false
+end
+--Lock Npcs/e Aimbot 
+local function getClosestNPC(maxRange)
     local closestNPC = nil
-    local closestDistance = math.huge
-
+    local closestPart = nil
+    local closestDistance = maxRange or math.huge
+    
     for _, object in ipairs(workspace:GetDescendants()) do
         if object:IsA("Model") then
             local humanoid = object:FindFirstChild("Humanoid") or object:FindFirstChildWhichIsA("Humanoid")
-            local hrp = object:FindFirstChild("HumanoidRootPart") or object.PrimaryPart
-            if humanoid and hrp and humanoid.Health > 0 and object.Name ~= "Horse" then
-                local isPlayer = false
-                for _, pl in ipairs(Players:GetPlayers()) do
-                    if pl.Character == object then
-                        isPlayer = true
-                        break
-                    end
-                end
-                if not isPlayer then
-                    local distance = (hrp.Position - player.Character.HumanoidRootPart.Position).Magnitude
-                    if distance < closestDistance then
-                        closestDistance = distance
-                        closestNPC = object
-                    end
-                end
-            end
-        end
-    end
-
-    return closestNPC
-end
-
---Aimbot Npc
--- Função para encontrar o NPC mais próximo
-local function getClosestNPC()
-    local closestNPC = nil
-    local closestDistance = aimbotRange
-    
-    for _, npc in ipairs(workspace:GetDescendants()) do
-        if npc:IsA("Model") and npc:FindFirstChild("Humanoid") and npc:FindFirstChild("HumanoidRootPart") then
-            -- Verifica se não é um jogador
-            local isPlayer = false
-            for _, plr in ipairs(Players:GetPlayers()) do
-                if plr.Character == npc then
-                    isPlayer = true
+            local hrp = object:FindFirstChild("HumanoidRootPart")
+            local head = object:FindFirstChild("Head")
+            
+            -- Lista de NPCs para ignorar
+            local ignoredNPCs = {"Horse", "Unicorn"}
+            local shouldIgnore = false
+            for _, name in ipairs(ignoredNPCs) do
+                if object.Name == name then
+                    shouldIgnore = true
                     break
                 end
             end
             
-            if not isPlayer and npc.Humanoid.Health > 0 then
-                local distance = (npc.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
-                if distance < closestDistance then
-                    closestDistance = distance
-                    closestNPC = npc
+            -- Verifica se é um NPC válido
+            if humanoid and humanoid.Health > 0 and not shouldIgnore and not isPlayerModel(object) then
+                local targetPart = head or hrp  -- Prioriza a cabeça
+                if targetPart then
+                    local distance = (targetPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+                    if distance < closestDistance then
+                        closestDistance = distance
+                        closestNPC = object
+                        closestPart = targetPart
+                    end
                 end
             end
         end
     end
     
-    return closestNPC
+    return closestNPC, closestPart
 end
 
 
@@ -811,13 +1162,11 @@ local function startAimbot()
             return
         end
         
-        local npc = getClosestNPC()
-        if npc and npc:FindFirstChild("HumanoidRootPart") then
-            local targetPosition = npc.HumanoidRootPart.Position
+        local npc, targetPart = getClosestNPC(aimbotRange)  -- Agora recebe ambos valores
+        if npc and targetPart then
+            local targetPosition = targetPart.Position
             local currentLook = camera.CFrame
             local newLook = CFrame.lookAt(camera.CFrame.Position, targetPosition)
-            
-            -- Aplica suavização
             camera.CFrame = smoothLookAt(currentLook, newLook, 1 - smoothness)
         end
     end)
@@ -850,9 +1199,21 @@ noClipButton.MouseButton1Click:Connect(toggleNoClip)
 
 ESPToggle.MouseButton1Click:Connect(toggleESP)
 
-TpTrainButton.MouseButton1Click:Connect(goToTrain)
+TpTrainButton.MouseButton1Click:Connect(function()
+task.spawn(function()
+            local seat = findLadder()
+            if seat then
+                walkToDestination(seat, true)
+                
+            else
+                print("Falhou!")
+            end
 
-ladderButton.MouseButton1Click:Connect(climbLadder)
+            task.wait(1.5)
+            print("Retomado")
+        end)
+    end)
+
 
 AutoTeleportToggle.MouseButton1Click:Connect(function()
     autoTeleport = not autoTeleport
