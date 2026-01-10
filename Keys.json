@@ -10,15 +10,6 @@
       "max_devices": 10000
     },
     {
-      "key": "Hopserver",
-      "device_id": "",
-      "expiry_date": "2026-02-09",
-      "active": false,
-      "status": "inactive",
-      "created_date": "2026-01-10",
-      "max_devices": 1
-    },
-    {
       "key": "gitclone",
       "device_id": "",
       "expiry_date": "2026-02-09",
