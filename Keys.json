@@ -8,15 +8,6 @@
       "status": "inactive",
       "created_date": "2026-01-10",
       "max_devices": 10000
-    },
-    {
-      "key": "7DaysPremium121",
-      "device_id": "",
-      "expiry_date": "2026-01-17",
-      "active": true,
-      "status": "active",
-      "created_date": "2026-01-10",
-      "max_devices": 2
     }
   ]
 }
