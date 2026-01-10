@@ -1,13 +1,3 @@
 {
-  "licenses": [
-    {
-      "key": "KAZEGAGE-PZ2XGPK6S6YC",
-      "device_id": "",
-      "expiry_date": "2026-02-02",
-      "active": false,
-      "status": "inactive",
-      "created_date": "2026-01-10",
-      "max_devices": 10000
-    }
-  ]
+  "licenses": []
 }
