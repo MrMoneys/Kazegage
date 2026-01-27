@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "message": "verified",
+  "username": "Premium User",
+  "key_type": "premium",
+  "days_remaining": 99999,
+  "total_devices_used": 1,
+  "max_devices_allowed": 10,
+  "remaining_device_slots": 9,
+  "banned": 0
+}
