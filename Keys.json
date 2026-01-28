@@ -4,8 +4,8 @@
       "key": "hopserver",
       "device_id": "",
       "expiry_date": "2026-02-09",
-      "active": false,
-      "status": "inactive",
+      "active": true,
+      "status": "active",
       "created_date": "2026-01-10",
       "max_devices": 1
     },
