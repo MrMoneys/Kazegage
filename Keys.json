@@ -8,6 +8,15 @@
       "status": "active",
       "created_date": "2026-01-10",
       "max_devices": 1
+    },
+    {
+      "key": "BLACKBEARDV2",
+      "device_id": "",
+      "expiry_date": "2026-02-03",
+      "active": true,
+      "status": "active",
+      "created_date": "2026-01-28",
+      "max_devices": 10000
     }
   ]
 }
