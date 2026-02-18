@@ -17,6 +17,15 @@
       "status": "active",
       "created_date": "2026-01-28",
       "max_devices": 10000
+    },
+    {
+      "key": "PHP01",
+      "device_id": "",
+      "expiry_date": "2026-03-20",
+      "active": true,
+      "status": "active",
+      "created_date": "2026-02-18",
+      "max_devices": 1
     }
   ]
 }
