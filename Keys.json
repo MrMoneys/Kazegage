@@ -13,8 +13,8 @@
       "key": "PHP01",
       "device_id": "",
       "expiry_date": "2026-03-20",
-      "active": true,
-      "status": "active",
+      "active": false,
+      "status": "inactive",
       "created_date": "2026-02-18",
       "max_devices": 1
     }
