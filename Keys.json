@@ -17,6 +17,15 @@
       "status": "active",
       "created_date": "2026-02-18",
       "max_devices": 1
+    },
+    {
+      "key": "ADONIAS",
+      "device_id": "",
+      "expiry_date": "2026-02-18",
+      "active": true,
+      "status": "active",
+      "created_date": "2026-02-19",
+      "max_devices": 1
     }
   ]
 }
