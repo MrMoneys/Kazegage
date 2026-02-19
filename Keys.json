@@ -17,6 +17,24 @@
       "status": "active",
       "created_date": "2026-02-18",
       "max_devices": 1
+    },
+    {
+      "key": "KAZEGAGE-47FAKAOL",
+      "device_id": "",
+      "expiry_date": "2026-03-21",
+      "active": true,
+      "status": "active",
+      "created_date": "2026-02-19",
+      "max_devices": 1
+    },
+    {
+      "key": "KAZEGAGE-QCSFD1ON",
+      "device_id": "",
+      "expiry_date": "2026-03-21",
+      "active": true,
+      "status": "active",
+      "created_date": "2026-02-19",
+      "max_devices": 1
     }
   ]
 }
